@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06162613-960B-4949-9617-6DB96CF4B325}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SecureNetRestApiSDK</RootNamespace>
+    <AssemblyName>SecureNetRestApiSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SNET.Core">
+      <HintPath>references\SNET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Controllers\BaseController.cs" />
+    <Compile Include="Api\Controllers\BatchesController.cs" />
+    <Compile Include="Api\Controllers\CustomersController.cs" />
+    <Compile Include="Api\Controllers\PaymentsController.cs" />
+    <Compile Include="Api\Controllers\PreVaultController.cs" />
+    <Compile Include="Api\Controllers\TransactionsController.cs" />
+    <Compile Include="Api\Enums\EncryptionModeType.cs" />
+    <Compile Include="Api\Models\AdditionalTerminalInfo.cs" />
+    <Compile Include="Api\Models\Address.cs" />
+    <Compile Include="Api\Models\Card.cs" />
+    <Compile Include="Api\Models\Check.cs" />
+    <Compile Include="Api\Models\DeveloperApplication.cs" />
+    <Compile Include="Api\Models\Encryption.cs" />
+    <Compile Include="Api\Models\ExtendedInformation.cs" />
+    <Compile Include="Api\Models\InstallmentPaymentPlan.cs" />
+    <Compile Include="Api\Models\LevelThreeData.cs" />
+    <Compile Include="Api\Models\LevelTwoData.cs" />
+    <Compile Include="Api\Models\MailOrTelephoneData.cs" />
+    <Compile Include="Api\Models\PaymentMethod.cs" />
+    <Compile Include="Api\Models\PaymentVaultToken.cs" />
+    <Compile Include="Api\Models\Product.cs" />
+    <Compile Include="Api\Models\RecurringPaymentPlan.cs" />
+    <Compile Include="Api\Models\Schedule.cs" />
+    <Compile Include="Api\Models\ServiceData.cs" />
+    <Compile Include="Api\Models\StoredInstallmentPaymentPlan.cs" />
+    <Compile Include="Api\Models\StoredRecurringPaymentPlan.cs" />
+    <Compile Include="Api\Models\StoredScheduledVariablePaymentPlan.cs" />
+    <Compile Include="Api\Models\StoredVariablePaymentPlan.cs" />
+    <Compile Include="Api\Models\Transaction.cs" />
+    <Compile Include="Api\Models\TransactionData.cs" />
+    <Compile Include="Api\Models\VaultCustomer.cs" />
+    <Compile Include="Api\Models\VaultPaymentMethod.cs" />
+    <Compile Include="Api\Requests\BatchCurrentRequest.cs" />
+    <Compile Include="Api\Requests\BatchRetrieveRequest.cs" />
+    <Compile Include="Api\Requests\BatchCloseRequest.cs" />
+    <Compile Include="Api\Requests\TransactionRetrieveRequest.cs" />
+    <Compile Include="Api\Requests\TransactionSearchRequest.cs" />
+    <Compile Include="Api\Models\UserDefinedField.cs" />
+    <Compile Include="Api\Models\VariablePaymentPlan.cs" />
+    <Compile Include="Api\Requests\AddInstallmentPaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\AddPaymentMethodRequest.cs" />
+    <Compile Include="Api\Requests\AddRecurringPaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\AddVariablePaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\AuthorizeRequest.cs" />
+    <Compile Include="Api\Requests\ChargeRequest.cs" />
+    <Compile Include="Api\Requests\RetrievePaymentAccountRequest.cs" />
+    <Compile Include="Api\Requests\RetrieveCustomerRequest.cs" />
+    <Compile Include="Api\Requests\CreateCustomerRequest.cs" />
+    <Compile Include="Api\Requests\CreditRequest.cs" />
+    <Compile Include="Api\Requests\DeletePaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\PriorAuthCaptureRequest.cs" />
+    <Compile Include="Api\Requests\RefundRequest.cs" />
+    <Compile Include="Api\Requests\RemovePaymentMethodRequest.cs" />
+    <Compile Include="Api\Requests\RetrievePaymentPlanRequst.cs" />
+    <Compile Include="Api\Requests\SecureNetRequest.cs" />
+    <Compile Include="Api\Requests\TokenCardRequest.cs" />
+    <Compile Include="Api\Requests\TokenCheckRequest.cs" />
+    <Compile Include="Api\Requests\TransactionUpdateRequest.cs" />
+    <Compile Include="Api\Requests\UpdateCustomerRequest.cs" />
+    <Compile Include="Api\Requests\UpdateInstallmentPaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\UpdatePaymentMethodRequest.cs" />
+    <Compile Include="Api\Requests\UpdateRecurringPaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\UpdateVariablePaymentPlanRequest.cs" />
+    <Compile Include="Api\Requests\VaultCustomerAndPaymentMethodRequest.cs" />
+    <Compile Include="Api\Requests\VoidRequest.cs" />
+    <Compile Include="Api\Responses\AddInstallmentPaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\AddPaymentMethodResponse.cs" />
+    <Compile Include="Api\Responses\AddRecurringPaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\AddVariablePaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\AuthorizeResponse.cs" />
+    <Compile Include="Api\Responses\BatchCloseResponse.cs" />
+    <Compile Include="Api\Responses\BatchCurrentResponse.cs" />
+    <Compile Include="Api\Responses\BatchRetrieveResponse.cs" />
+    <Compile Include="Api\Responses\ChargeResponse.cs" />
+    <Compile Include="Api\Responses\CreateCustomerResponse.cs" />
+    <Compile Include="Api\Responses\CreditResponse.cs" />
+    <Compile Include="Api\Responses\DeletePaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\PriorAuthCaptureResponse.cs" />
+    <Compile Include="Api\Responses\RefundResponse.cs" />
+    <Compile Include="Api\Responses\RemovePaymentMethodResponse.cs" />
+    <Compile Include="Api\Responses\RetrieveCustomerResponse.cs" />
+    <Compile Include="Api\Responses\RetrievePaymentAccountResponse.cs" />
+    <Compile Include="Api\Responses\RetrievePaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\SecureNetResponse.cs" />
+    <Compile Include="Api\Responses\TokenCardResponse.cs" />
+    <Compile Include="Api\Responses\TokenCheckResponse.cs" />
+    <Compile Include="Api\Responses\TransactionRetrieveResponse.cs" />
+    <Compile Include="Api\Responses\TransactionSearchResponse.cs" />
+    <Compile Include="Api\Responses\TransactionUpdateResponse.cs" />
+    <Compile Include="Api\Responses\UpdateCustomerResponse.cs" />
+    <Compile Include="Api\Responses\UpdateInstallmentPaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\UpdatePaymentMethodResponse.cs" />
+    <Compile Include="Api\Responses\UpdateRecurringPaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\UpdateVariablePaymentPlanResponse.cs" />
+    <Compile Include="Api\Responses\VaultCustomerAndPaymentMethodResponse.cs" />
+    <Compile Include="Api\Responses\VoidResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
