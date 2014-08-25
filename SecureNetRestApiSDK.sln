@@ -7,19 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureNetRestApiSDK", "Secu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureNetRestApiSDK_UnitTest", "SecureNetRestApiSDK_UnitTest\SecureNetRestApiSDK_UnitTest.csproj", "{8BDC56BB-E677-456F-90B8-1A918BD3836E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNET.Core", "SNET.Core\SNET.Core.csproj", "{773C5633-1029-4F1B-A6A4-42BC3274AAC4}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.securenet.com:8080/tfs/securenet
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SecureNetRestApiSDK\\SecureNetRestApiSDK.csproj
-		SccProjectName1 = SecureNetRestApiSDK
-		SccLocalPath1 = SecureNetRestApiSDK
-		SccProjectUniqueName2 = SecureNetRestApiSDK_UnitTest\\SecureNetRestApiSDK_UnitTest.csproj
-		SccProjectName2 = SecureNetRestApiSDK_UnitTest
-		SccLocalPath2 = SecureNetRestApiSDK_UnitTest
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -33,6 +23,10 @@ Global
 		{8BDC56BB-E677-456F-90B8-1A918BD3836E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BDC56BB-E677-456F-90B8-1A918BD3836E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BDC56BB-E677-456F-90B8-1A918BD3836E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773C5633-1029-4F1B-A6A4-42BC3274AAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773C5633-1029-4F1B-A6A4-42BC3274AAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773C5633-1029-4F1B-A6A4-42BC3274AAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773C5633-1029-4F1B-A6A4-42BC3274AAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

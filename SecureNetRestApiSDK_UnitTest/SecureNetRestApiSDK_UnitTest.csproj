@@ -39,13 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SecureNetRestApiSDK\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SNET.Core">
-      <HintPath>..\..\SecureNetRestApiSDK\SecureNetRestApiSDK\references\SNET.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Net.Http" />
@@ -86,9 +79,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SecureNetRestApiSDK\SecureNetRestApiSDK\SecureNetRestApiSDK.csproj">
+    <ProjectReference Include="..\SecureNetRestApiSDK\SecureNetRestApiSDK.csproj">
       <Project>{06162613-960b-4949-9617-6db96cf4b325}</Project>
       <Name>SecureNetRestApiSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SNET.Core\SNET.Core.csproj">
+      <Project>{773c5633-1029-4f1b-a6a4-42bc3274aac4}</Project>
+      <Name>SNET.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,10 @@
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\SNET.Core.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\SNET.Core.pdb
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\Newtonsoft.Json.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\System.Net.Http.Formatting.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\System.Web.Http.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\Newtonsoft.Json.xml
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\System.Net.Http.Formatting.xml
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\bin\Debug\System.Web.Http.xml
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\obj\Debug\SNET.Core.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SNET.Core\obj\Debug\SNET.Core.pdb

@@ -21,11 +21,8 @@ namespace SecureNetRestApiSDK.Api.Controllers
                 throw new ArgumentNullException("secureNetRequest");
             }
 
-            object[] parameters = null;
-            string resourcePath = SDKUtil.FormatURIPath(secureNetRequest.GetUri(), parameters);
-
             string payLoad = JsonConvert.SerializeObject(secureNetRequest);
-           
+
             apiContext.Config = new Dictionary<string, string>
             {
                 {"secureNetId", ConfigurationManager.AppSettings["secureNetId"]},
@@ -33,10 +30,12 @@ namespace SecureNetRestApiSDK.Api.Controllers
                 {"mode", ConfigurationManager.AppSettings["mode"]},
                 {"endpoint", ConfigurationManager.AppSettings["endpoint"]},
                 {"timeout", ConfigurationManager.AppSettings["timeout"]},
-                {"connectiontimeout", ConfigurationManager.AppSettings["connectiontimeout"]}
+                {"connectionTimeout", ConfigurationManager.AppSettings["connectionTimeout"]},
+                  {"developerId", ConfigurationManager.AppSettings["developerId"]},
+                    {"versionId", ConfigurationManager.AppSettings["versionId"]}
             };
 
-            return Helper.ConfigureAndExecute<T>(apiContext, secureNetRequest.GetMethod(), resourcePath, payLoad);
+            return Helper.ConfigureAndExecute<T>(apiContext, secureNetRequest.GetMethod(), secureNetRequest.GetUri(), payLoad);
         }
 
         #endregion

@@ -1,0 +1,13 @@
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\SecureNetRestApiSDK.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\SecureNetRestApiSDK.pdb
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\Newtonsoft.Json.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\SNET.Core.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\System.Net.Http.Formatting.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\System.Web.Http.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\SNET.Core.pdb
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\Newtonsoft.Json.xml
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\System.Net.Http.Formatting.xml
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\bin\Debug\System.Web.Http.xml
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\obj\Debug\SecureNetRestApiSDK.csprojResolveAssemblyReference.cache
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\obj\Debug\SecureNetRestApiSDK.dll
+C:\general\sdks\restapi_sdk_dotnet-master\SecureNetRestApiSDK\obj\Debug\SecureNetRestApiSDK.pdb
