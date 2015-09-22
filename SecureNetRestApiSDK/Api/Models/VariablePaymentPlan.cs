@@ -7,7 +7,7 @@ namespace SecureNetRestApiSDK.Api.Models
     {
         #region Properties
 
-        public DateTime PlanEndDate { get; set; }
+        public DateTime? PlanEndDate { get; set; }
         public string PrimaryPaymentMethodId { get; set; }
         public string SecondaryPaymentMethodId { get; set; }
         public List<UserDefinedField> UserDefinedFields { get; set; }

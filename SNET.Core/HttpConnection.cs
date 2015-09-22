@@ -28,7 +28,7 @@ namespace SNET.Core
                     {
                         case "POST":
                         case "PUT":
-                        case "DELETE":
+                        //case "DELETE":
                             using (StreamWriter streamWriter = new StreamWriter(((WebRequest)httpRequest).GetRequestStream()))
                             {
                                 if (!string.IsNullOrEmpty(payLoad))

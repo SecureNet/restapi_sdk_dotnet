@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace SecureNetRestApiSDK.Api.Models
 {
@@ -11,7 +12,7 @@ namespace SecureNetRestApiSDK.Api.Models
         public DateTime PlanStartDate { get; set; }
 
         [JsonProperty("scheduledPayments")]
-        public object ScheduledPayments { get; set; }
+        public List<StoredScheduledVariablePaymentPlan> ScheduledPayments { get; set; }
 
         [JsonProperty("maxRetries")]
         public int MaxRetries { get; set; }
