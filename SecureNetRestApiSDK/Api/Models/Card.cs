@@ -23,6 +23,26 @@ namespace SecureNetRestApiSDK.Api.Models
         public String Number { get; set; }
 
         /// <summary>
+        /// Masked Credit card account number.
+        /// </summary>
+        [JsonProperty("maskedNumber")]
+        public string MaskedNumber { get; set; }
+
+        /// <summary>
+        /// Credit Card Last 4 Digits
+        /// </summary>
+        [JsonProperty("lastFourDigits")]
+        public string LastFourDigits { get; set; }
+
+        /// <summary>
+        /// Credit Card Type
+        /// </summary>
+        [JsonProperty("creditCardType")]
+        public string CreditCardType { get; set; }
+
+        
+
+        /// <summary>
         /// Card security code.
         /// </summary>
         [JsonProperty("cvv")]
@@ -69,6 +89,8 @@ namespace SecureNetRestApiSDK.Api.Models
         /// </summary>
         [JsonProperty("signature")]
         public byte[] Signature { get; set; }
+
+       
 
         #endregion
     }
