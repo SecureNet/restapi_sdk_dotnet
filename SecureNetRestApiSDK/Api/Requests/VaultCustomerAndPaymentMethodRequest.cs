@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using SecureNetRestApiSDK.Api.Models;
 using SNET.Core;
+using System;
 
 namespace SecureNetRestApiSDK.Api.Requests
 {
@@ -8,6 +9,8 @@ namespace SecureNetRestApiSDK.Api.Requests
     {
         #region Properties
 
+        public string CustomerId { get; set; }
+        public string PaymentMethodId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
@@ -18,6 +21,7 @@ namespace SecureNetRestApiSDK.Api.Requests
         public string Notes { get; set; }
         public List<UserDefinedField> UserDefinedFields { get; set; }
         public int CustomerDuplicateCheckIndicator { get; set; }
+        public Check Check { get; set; }
         public Card Card { get; set; }
         public string Phone { get; set; }
         public bool Primary { get; set; }
@@ -30,6 +34,7 @@ namespace SecureNetRestApiSDK.Api.Requests
 
         public override string GetUri()
         {
+            //creates customer and payment method.
             return "api/Customers/Payments";
         }
 

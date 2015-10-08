@@ -10,6 +10,7 @@ namespace SecureNetRestApiSDK.Api.Requests
     {
         #region Properties
 
+       public string CustomerId { get; set; }
         /// <summary>
         /// Amount to charge the account.
         /// </summary>

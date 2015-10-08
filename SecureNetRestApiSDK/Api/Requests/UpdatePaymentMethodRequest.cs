@@ -11,6 +11,7 @@ namespace SecureNetRestApiSDK.Api.Requests
 
         public string CustomerId { get; set; }
         public string PaymentMethodId { get; set; }
+        public Check Check { get; set; }
         public Card Card { get; set; }
         public string Phone { get; set; }
         public string Notes { get; set; }

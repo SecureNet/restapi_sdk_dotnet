@@ -8,11 +8,11 @@ namespace SecureNetRestApiSDK.Api.Requests
     {
         #region Properties
 
-        public int TransactionId { get; set; }
+        //public int TransactionId { get; set; }
         public string CustomerId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public decimal Amount { get; set; }
+       // public decimal Amount { get; set; }
         public DeveloperApplication DeveloperApplication { get; set; }
 
         #endregion
@@ -21,12 +21,12 @@ namespace SecureNetRestApiSDK.Api.Requests
 
         public override string GetUri()
         {
-            return String.Format("api/transactions/{0}", TransactionId);
+            return "api/transactions/Search";
         }
 
         public override HttpMethodEnum GetMethod()
         {
-            return HttpMethodEnum.GET;
+            return HttpMethodEnum.POST;
         }
 
         #endregion
