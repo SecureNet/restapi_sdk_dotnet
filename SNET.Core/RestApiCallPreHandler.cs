@@ -76,6 +76,8 @@ namespace SNET.Core
                 foreach (KeyValuePair<string, string> keyValuePair in this.headersMap)
                     dictionaryMap.Add(keyValuePair.Key, keyValuePair.Value);
             }
+
+            dictionaryMap.Add("Origin", "test.com");
             return dictionaryMap;
         }
 

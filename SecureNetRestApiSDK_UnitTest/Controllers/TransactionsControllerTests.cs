@@ -20,13 +20,15 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
         [TestMethod]
         public void Transaction_Reporting_And_Management_Search_Transaction_Request_Returns_Successfully()
         {
+
+            var paymentsController = new PaymentsControllerTests();
+            int transactionId = paymentsController.Credit_Card_Present_AuthorizationOnly_Request_Returns_Successfully();
             // Arramge
             var request = new TransactionSearchRequest
             {
-                TransactionId = 111995104,
-                CustomerId = "5000587",
-                StartDate = Convert.ToDateTime("02/01/2014"),
-                EndDate = Convert.ToDateTime("05/31/2014"),
+                TransactionId = transactionId,
+                StartDate = DateTime.UtcNow.AddDays(-1),
+                EndDate = DateTime.UtcNow.AddDays(1),
                 Amount = 11.00m,
                 DeveloperApplication = new DeveloperApplication
                 {
@@ -53,10 +55,12 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
         [TestMethod]
         public void Transaction_Reporting_And_Management_Retrieve_Transaction_Request_Returns_Successfully()
         {
+            var paymentsController = new PaymentsControllerTests();
+            int transactionId = paymentsController.Credit_Card_Present_AuthorizationOnly_Request_Returns_Successfully();
             // Arrange
             var request = new TransactionRetrieveRequest
             {
-                TransactionId = 111995104 
+                TransactionId = transactionId 
             };
 
             var apiContext = new APIContext();

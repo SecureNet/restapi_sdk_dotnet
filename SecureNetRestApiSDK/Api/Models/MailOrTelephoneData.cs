@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace SecureNetRestApiSDK.Api.Models
 {
-    public class MailOrTelephoneData
+    public class MailOrTelephoneOrderData
     {
         #region Properties
 
@@ -11,10 +11,10 @@ namespace SecureNetRestApiSDK.Api.Models
         public string Type { get; set; }
 
         [JsonProperty("totalNumberOfInstallments")]
-        public String TotalNumberOfInstallments { get; set; }
+        public int? TotalNumberOfInstallments { get; set; }
 
         [JsonProperty("currentInstallment")]
-        public String CurrentInstallment { get; set; }
+        public int? CurrentInstallment { get; set; }
 
         #endregion
     }

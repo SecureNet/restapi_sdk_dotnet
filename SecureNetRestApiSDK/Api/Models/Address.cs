@@ -14,12 +14,12 @@ namespace SecureNetRestApiSDK.Api.Models
         /// </summary>
         [JsonProperty("line1")]
         public string Line1 { get; set; }
-        
+
         /// <summary>
         /// City where address is located.
         /// </summary>
         [JsonProperty("city")]
-        
+
         public string City { get; set; }
 
         /// <summary>
@@ -33,12 +33,22 @@ namespace SecureNetRestApiSDK.Api.Models
         /// </summary>
         [JsonProperty("zip")]
         public string Zip { get; set; }
-        
+
         /// <summary>
         /// Country name. Defaults to US.
         /// </summary>
         [JsonProperty("country")]
         public string Country { get; set; }
+
+        /// <summary>
+        /// Company name. 
+        /// </summary>
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Phone name. 
+        /// </summary>
+        public string Phone { get; set; }
 
         #endregion
     }

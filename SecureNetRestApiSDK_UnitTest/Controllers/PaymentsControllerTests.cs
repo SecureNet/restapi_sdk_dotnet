@@ -143,7 +143,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             // Arrange
             var request = new AuthorizeRequest
             {
-                Amount = 11.00m,
+                Amount = 17.00m,
                 Card = new Card
                 {
                     TrackData = "%B4444333322221111^SECURENET^16041015432112345678?;4444333322221111=16041015432112345678?"

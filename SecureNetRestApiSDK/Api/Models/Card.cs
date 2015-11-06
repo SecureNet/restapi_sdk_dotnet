@@ -70,6 +70,14 @@ namespace SecureNetRestApiSDK.Api.Models
         [JsonProperty("signature")]
         public byte[] Signature { get; set; }
 
+        /// <summary>
+        /// Last name of the account holder.
+        /// </summary>
+        [JsonProperty("email")]
+        public String Email { get; set; }
+
+        [JsonProperty("emailReceipt")]
+        public bool EmailReceipt { get; set; }
         #endregion
     }
 }
