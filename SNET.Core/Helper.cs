@@ -42,7 +42,9 @@ namespace SNET.Core
                     throw null; 
                 ConnectionManager instance = ConnectionManager.Instance;
                 instance.GetConnection(config, result.ToString());
-
+                
+                ServicePointManager.Expect100Continue = false;
+                
                 HttpWebRequest connection = CreateHttpWebRequestConnection(config, httpMethod, result, instance);
 
                 SetHttpHeaders(headerMap, connection);
