@@ -606,11 +606,11 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
         #region RecurringBilling
 
         /// <summary>
-        /// Unit Tests for Creating a Payment Account, Creating a Recurring Payment Plan, Updating the Recurring Payment Plan, Retrieving the Recurring Payment Plan, and 
-        /// deleting the Recurring Payment Plan requests. Tests combined in one method to pass the required payment method identifier, the plan identifier and to guaranteee the order of operation.
+        /// Unit Tests for Creating a Payment Account, Creating a Recurring Payment Plan, Updating the Recurring Payment Plan, and Retrieving the Recurring Payment Plan requests. 
+        /// Tests combined in one method to pass the required payment method identifier, the plan identifier and to guaranteee the order of operation.
         /// </summary>
         [TestMethod]
-        public void Recurring_Billing_Create_Retrieve_Update_And_Delete_Recurring_Payment_Plan_Requests_Returns_Successfully()
+        public void Recurring_Billing_Create_Retrieve_And_Update_Recurring_Payment_Plan_Requests_Returns_Successfully()
         {
             // Create the Customer
             string customerId = SecureNet_Vault_Create_Customer_Request_Returns_Successfully();
@@ -627,8 +627,6 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             // Update the Recurring Payment Plan
             //Recurring_Billing_Update_Recurring_Payment_Plan_Request_Returns_Successfully(customerId, planId);
 
-            // Delete the Recurring Payment Plan
-            //Recurring_Billing_Delete_Payment_Plan_Request_Returns_Successfully(customerId, planId);
 
             // Delete the Payment Account
             //SecureNet_Vault_Delete_Payment_Account_Request_Returns_Successfully(customerId, paymentMethodId);
@@ -777,9 +775,6 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
 
             // Update the Installment Plan
             //Recurring_Billing_Update_Installment_Plan_Request_Returns_Successfully(customerId, planId);
-            
-            // Delete the Installment Plan
-           // Recurring_Billing_Delete_Payment_Plan_Request_Returns_Successfully(customerId, planId);
 
             // Delete the Payment Account
            // SecureNet_Vault_Delete_Payment_Account_Request_Returns_Successfully(customerId, paymentMethodId);
@@ -1054,30 +1049,6 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
 
             // Act
             var response = controller.ProcessRequest<RetrievePaymentPlanResponse>(apiContext, request);
-
-            // Assert
-            Assert.IsNotNull(response);
-            Assert.IsTrue(response.Success);
-        }
-
-        /// <summary>
-        /// Successful response returned from a Delete Payment Plan request.
-        /// https://apidocs.securenet.com/docs/recurringbilling.html?lang=csharp#delete
-        /// </summary>
-        public void Recurring_Billing_Delete_Payment_Plan_Request_Returns_Successfully(string customerId, string planId)
-        {
-            // Arrange
-            var request = new DeletePaymentPlanRequest
-            {
-                CustomerId = customerId,
-                PlanId = planId
-            };
-
-            var apiContext = new APIContext();
-            var controller = new CustomersController();
-
-            // Act
-            var response = controller.ProcessRequest<DeletePaymentPlanResponse>(apiContext, request);
 
             // Assert
             Assert.IsNotNull(response);

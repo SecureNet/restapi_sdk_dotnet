@@ -110,7 +110,6 @@
     <Compile Include="Api\Requests\RetrieveCustomerRequest.cs" />
     <Compile Include="Api\Requests\CreateCustomerRequest.cs" />
     <Compile Include="Api\Requests\CreditRequest.cs" />
-    <Compile Include="Api\Requests\DeletePaymentPlanRequest.cs" />
     <Compile Include="Api\Requests\PriorAuthCaptureRequest.cs" />
     <Compile Include="Api\Requests\RefundRequest.cs" />
     <Compile Include="Api\Requests\RemovePaymentMethodRequest.cs" />
