@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SecureNetRestApiSDK.Api.Controllers;
 using SecureNetRestApiSDK.Api.Models;
 using SecureNetRestApiSDK.Api.Requests;
@@ -22,7 +23,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             // Arrange
             var request = new TokenCardRequest
             {
-                PublicKey = "278DCC4B-85FE-485D-AFDD-9927AC4CA229",
+                PublicKey = ConfigurationManager.AppSettings["publicKey"],
                 Card = new Card
                 {
                     Number = "4111 1111 1111 1111",
@@ -63,7 +64,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             // Arrange
             var request = new TokenCheckRequest
             {
-                PublicKey = "278DCC4B-85FE-485D-AFDD-9927AC4CA229",
+                PublicKey = ConfigurationManager.AppSettings["publicKey"],
                 Check = new Check
                 {
                     FirstName = "John",
