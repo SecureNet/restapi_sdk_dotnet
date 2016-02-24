@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SecureNetRestApiSDK.Api.Controllers;
 using SecureNetRestApiSDK.Api.Models;
 using SecureNetRestApiSDK.Api.Requests;
@@ -452,7 +453,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
                 PaymentVaultToken = new PaymentVaultToken
                 {
                     PaymentMethodId = token,
-                    PublicKey = "278DCC4B-85FE-485D-AFDD-9927AC4CA229"
+                    PublicKey = ConfigurationManager.AppSettings["publicKey"]
                 },
                 AddToVault = true,
                 ExtendedInformation = new ExtendedInformation
