@@ -103,7 +103,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
                 },
                 DeveloperApplication = new DeveloperApplication
                 {
-                    DeveloperId = 10000692,
+                    DeveloperId = 12345678,
                     Version = "1.2"
                 }
             };
