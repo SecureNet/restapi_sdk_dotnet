@@ -10,6 +10,7 @@ namespace SecureNetRestApiSDK.Api.Requests
         #region Properties
 
         public string CustomerId { get; set; }
+        public string PaymentMethodId { get; set; }
         public Card Card { get; set; }
         public string Phone { get; set; }
         public string Notes { get; set; }
