@@ -9,10 +9,10 @@ using SNET.Core;
 
 namespace SecureNetRestApiSDK_UnitTest.Controllers
 {
-    [TestClass]
+	[TestClass]
     public class CustomersControllerTests
     {
-        #region SecureNet Vault
+    	#region SecureNet Vault
 
         /// <summary>
         /// Unit Tests for Create, Retrieve, Update and Delete Customer requests. Tests combined in one method to pass the
@@ -22,7 +22,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
         public void SecureNet_Vault_Create_Retrieve_Update_And_Delete_Customer_Requests_Returns_Successfully()
         {
             // Create the Customer
-            string customerId = SecureNet_Vault_Create_Customer_Request_Returns_Successfully();
+        	string customerId = SecureNet_Vault_Create_Customer_Request_Returns_Successfully();
 
             // Retrieve the Customer
             SecureNet_Vault_Retrieve_Customer_Request_Returns_Successfully(customerId);
@@ -32,19 +32,16 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
 
             // Delete the Customer
             //TODO
-        }
-        
-        [TestMethod]
+        } 
+		
+		[TestMethod]
 		public void SecureNet_Vault_Create_Retrieve_Update_Customer_Request_Providing_Id()
 		{
 			const string custId = "PASSED";
-
 			//Create the Customer
 			var customerId = SecureNet_Vault_Create_Customer_Request_With_Id_Returns_Successfully(custId);
-
 			// Retrieve the Customer
 			SecureNet_Vault_Retrieve_Customer_Request_Returns_Successfully(customerId);
-
 			// Update the Customer
 			SecureNet_Vault_Update_Customer_Request_Returns_Successfully(customerId);
 		}
@@ -119,7 +116,7 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             Assert.IsTrue(response.Success);
             Assert.IsNotNull(response.CustomerId);
             Assert.IsTrue(response.CustomerId.Length > 0);
-			Assert.AreEqual(request.CustomerId, response.CustomerId);
+		Assert.AreEqual(request.CustomerId, response.CustomerId);
 			Assert.AreEqual(customerId, response.CustomerId);
             return response.CustomerId;
         }
@@ -318,6 +315,62 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             // Delete the Customer
             //TODO
         }
+	[TestMethod]
+	public void SecureNet_Vault_Create_Payment_Account_With_Id_Returns_Successfully()
+	{
+	    const string customerId = "CERT1";
+	    //Create the Payment Account
+	    const string payment = "PAY1";
+	    string paymentMethodId = SecureNet_Value_Create_Payment_Account_Request_With_Payment_Id_Returns_Successfully(customerId, payment);
+	    //Retrieve the Payment Account
+	    SecureNet_Vault_Retrieve_Payment_Account_Request_Returns_Successfully(customerId, paymentMethodId);
+	}
+	
+	public string SecureNet_Value_Create_Payment_Account_Request_With_Payment_Id_Returns_Successfully(string customerId, string paymentId)
+	{
+		// Arrange
+		var request = new AddPaymentMethodRequest
+		{
+			CustomerId = customerId,
+			PaymentMethodId = paymentId,
+			Card = new Card
+			{
+				Number = "6011905000000004",
+				ExpirationDate = "01/2017",
+				Address = new Address
+				{
+					Line1 = "123 Main St.",
+					City = "Austin",
+					State = "TX",
+					Zip = "78759"
+				},
+				FirstName = "Jack",
+				LastName = "Test"
+			},
+			Phone = "816-250-7865",
+			Notes = "Create A Vault Account",
+			AccountDuplicateCheckIndicator = 0,
+			Primary = false,
+			DeveloperApplication = new DeveloperApplication
+			{
+				DeveloperId = 12345678,
+				Version = "1.2"
+			}
+		};
+		var apiContext = new APIContext();
+		var controller = new CustomersController();
+
+		// Act
+		var response = controller.ProcessRequest<AddPaymentMethodResponse>(apiContext, request);
+
+		// Assert
+		Assert.IsNotNull(response);
+		Assert.IsTrue(response.Success);
+		Assert.IsNotNull(response.VaultPaymentMethod);
+		Assert.IsNotNull(response.VaultPaymentMethod.PaymentId);
+		Assert.AreEqual(paymentId, response.VaultPaymentMethod.PaymentId);
+		return response.VaultPaymentMethod.PaymentId;
+	}
 
         /// <summary>
         /// Successful response returned from a Create Payment Account request.
