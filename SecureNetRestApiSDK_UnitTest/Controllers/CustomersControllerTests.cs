@@ -33,6 +33,96 @@ namespace SecureNetRestApiSDK_UnitTest.Controllers
             // Delete the Customer
             //TODO
         }
+        
+        [TestMethod]
+		public void SecureNet_Vault_Create_Retrieve_Update_Customer_Request_Providing_Id()
+		{
+			const string custId = "PASSED";
+
+			//Create the Customer
+			var customerId = SecureNet_Vault_Create_Customer_Request_With_Id_Returns_Successfully(custId);
+
+			// Retrieve the Customer
+			SecureNet_Vault_Retrieve_Customer_Request_Returns_Successfully(customerId);
+
+			// Update the Customer
+			SecureNet_Vault_Update_Customer_Request_Returns_Successfully(customerId);
+		}
+        
+        /// <summary>
+        /// Successful response returned from a Create Customer request when customer id is provided.
+        /// https://apidocs.securenet.com/docs/vault.html?lang=csharp#createcustomer
+        /// </summary>
+        public string SecureNet_Vault_Create_Customer_Request_With_Id_Returns_Successfully(string customerId)
+        {
+            // Arrange
+            var request = new CreateCustomerRequest
+            {
+				CustomerId = customerId,
+                FirstName = "Jack",
+                LastName = "Tester",
+                PhoneNumber = "402-122-1211",
+                EmailAddress = "Some@Emailaddress.net",
+                SendEmailReceipts = true,
+                Notes = "test notes",
+                Address = new Address
+                {
+                    Line1 = "123 Main St.",
+                    City = "Omaha",
+                    State = "NE",
+                    Zip = "68122"
+                },
+                Company = "Test Company",
+                UserDefinedFields = new List<UserDefinedField>
+                {
+                    new UserDefinedField
+                    {
+                        UdfName = "Udf1",
+                        UdfValue = "Udf1_Value"
+                    },
+                    new UserDefinedField
+                    {
+                        UdfName = "Udf2",
+                        UdfValue = "Udf2_Value"
+                    },
+                    new UserDefinedField
+                    {
+                        UdfName = "Udf3",
+                        UdfValue = "Udf3_Value"
+                    },
+                    new UserDefinedField
+                    {
+                        UdfName = "Udf4",
+                        UdfValue = "Udf4_Value"
+                    },
+                    new UserDefinedField
+                    {
+                        UdfName = "Udf5",
+                        UdfValue = "Udf5_Value"
+                    },
+                },
+                DeveloperApplication = new DeveloperApplication
+                {
+                    DeveloperId = 10000692,
+                    Version = "1.2"
+                }
+            };
+
+            var apiContext = new APIContext();
+            var controller = new CustomersController();
+
+            // Act
+            var response = controller.ProcessRequest<CreateCustomerResponse>(apiContext, request);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsTrue(response.Success);
+            Assert.IsNotNull(response.CustomerId);
+            Assert.IsTrue(response.CustomerId.Length > 0);
+			Assert.AreEqual(request.CustomerId, response.CustomerId);
+			Assert.AreEqual(customerId, response.CustomerId);
+            return response.CustomerId;
+        }
 
         /// <summary>
         /// Successful response returned from a Create Customer request.
